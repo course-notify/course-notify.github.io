@@ -1,153 +1,930 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage Template</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        #main-image {
-            width: 90%;
-            opacity: 0;
-            transition: opacity 6s ease-in-out;
-        }
-        
-        .banner {
-            background-color: #f8f9fa;
-            padding: 20px 0;
-            height: 80px;
-        }
-        .banner-title {
-            font-size: 3rem;
-            font-weight: bold;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Course Notify - Instant Notification</title>
+        <meta name="description" content="" />
+        <link
+            rel="shortcut icon"
+            href="./assets/logo/CN-Icon8.png"
+            type="image/x-icon"
+        />
 
-        @keyframes fadeInFromRight {
-            0% {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .fade-in-image {
-            opacity: 0;
-            animation: fadeInFromRight 10s ease-out forwards;
-        }
+        <!-- Open Graph / Facebook -->
+        <meta property="og:title" content="Course Notify Landing Page" />
+        <meta property="og:description" content="" />
+        <meta property="og:type" content="website" />
+        <!--  <meta property="og:url" content="https://github.com/PaulleDemon" /> -->
+        <!--Replace with the current website url-->
+        <meta property="og:image" content="https://www.coursenotify.com" />
 
-        .navbar {
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f8f9fa;
-            padding: 0 20px;
-        }
+        <!-- <link rel="stylesheet" href="../../tailwind-css/tailwind-runtime.css" /> -->
+        <link rel="stylesheet" href="./css/tailwind-build.css">
+        <link rel="stylesheet" href="css/index.css" />
 
-        .navbar-nav {
-            width: 100%;
-            justify-content: space-around;
-        }
-        .nav-item {
-            padding: 0 20px;
-        }
-        .nav-link {
-            transition: background-color 0.3s ease, color 0.3s ease;
-            border-radius: 1px;
-        }
-        .nav-link:hover {
-            background-color: #0d6efd;
-            color: white !important;
-        }
-        .thick-black-line {
-            border: none;
-            height: 3px;
-            background-color: #000000;
-            margin: 1px 0;
-        }
-
-        .text-container {
-            width: 80%;
-            display: flex;
-            justify-content: center;
-        }
-        .centered-text {
-            width: 80%;
-            text-align: center;
-            font-size: 20px;
-            line-height: 1.5;
-            margin: 20px 0;
-        }
-    </style>
-
-</head>
-<body class="bg-white text-dark">
-    <div class="banner">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-3">
-                    <img src="CN-Icon8.jpg" alt="Logo" class="img-fluid" style="max-height: 60px;">
+        <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+        <link rel="stylesheet" href="css/styles_new.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+            integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body
+        class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-black tw-text-white"
+    >
+        <header
+            class="tw-max-w-lg:tw-px-4 tw-max-w-lg:tw-mr-auto tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] lg:tw-justify-around"
+        >
+            <a class="tw-h-[50px] tw-w-[50px] tw-p-[4px]" href="">
+                <img
+                    src="./imgs/private/CN-Icon8.png"
+                    alt="logo"
+                    class="tw-object tw-h-full tw-w-full"
+                />
+            </a>
+            <div
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                id="collapsed-header-items"
+            >
+                <div
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                >
+                    <a class="header-links" href="#top"> HOME </a>
+                    <a class="header-links" href="#features"> FEATURES </a>
+                    <a class="header-links" href="#pricing"> PRICING </a>
+                    <a class="header-links" href="#colleges"> COLLEGES </a>
+                    <a class="header-links" href="#faqs"> FAQ </a>
+                    <a class="header-links" href="mailto:support@coursenotify.com"> SUPPORT </a>
                 </div>
-                <div class="col-md-6 text-center">
-                    <h1 class="banner-title">COURSE NOTIFY</h1>
-                </div>
-                <div class="col-md-3 text-end">
-                    <button class="btn btn-primary">Log In</button>
+                <div
+                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                >
+                    <a
+                        href="#signup"
+                        aria-label="signup"
+                        class="tw-rounded-full tw-bg-white tw-px-3 tw-py-2 tw-text-black tw-transition-transform tw-duration-[0.3s] hover:tw-translate-x-2"
+                    >
+                        <span>
+                            <a href="#login1">Login</a>
+                        </span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
-    <hr class="thick-black-line" />
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="fs-4 nav-link" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="fs-4 nav-link" href="#">FEATURES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="fs-4 nav-link" href="#">FAQ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="fs-4 nav-link" href="#">SUPPORT</a>
-                    </li>
-                </ul>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-white lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+        </header>
+
+        <section
+            class="hero-section tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-md:tw-mt-[50px]"
+            id="hero-section"
+        >
+            <div
+                class="tw-flex tw-h-full tw-min-h-[75vh]  tw-w-full tw-flex-col tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-p-4"
+            >
+                <div
+                    class="tw-flex tw-flex-col tw-place-content-center tw-items-center"
+                >
+                    <div
+                        class="reveal-up gradient-text tw-text-center tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                    >
+                        <span class=""> COURSE NOTIFY</span>
+                        <br />
+                    </div>
+                    <div
+                        class="reveal-up gradient-text tw-text-center tw-text-4xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug"
+                    >
+                        <span class="">Get Instant Notifications when Course Opens </span>
+                    </div>
+                    <div
+                        class="reveal-up tw-mt-10 tw-max-w-[450px] tw-p-2 tw-text-center tw-text-gray-300 max-lg:tw-max-w-full"
+                    >
+                       Be the first to register for a course, when seats open up.
+                    </div>
+
+                    <div
+                        class="reveal-up tw-mt-10 tw-flex tw-place-items-center tw-gap-4"
+                    >
+                        <a
+                            class="btn tw-bg-[#7e22ce85] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                            href="#signup1"
+                        >
+                            Signup
+                        </a>
+                        <a
+                            class="btn tw-flex tw-gap-2 !tw-bg-black !tw-text-white tw-transition-colors tw-duration-[0.3s] hover:!tw-bg-white hover:!tw-text-black"
+                            href="#features"
+                        >
+                            <i class="bi bi-play-circle-fill"></i>
+                            <span>Learn more</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up tw-relative tw-mt-8 tw-flex tw-w-full tw-place-content-center tw-place-items-center"
+                    id="dashboard-container"
+                >
+                    <div
+                        class="tw-min-h-[175vh] tw-relative tw-max-w-[80%] tw-overflow-hidden tw-rounded-xl tw-bg-transparent max-md:tw-max-w-full"
+                        id="dashboard"
+                    >
+                        <img
+                            src="./imgs/private/MainBanner-Black.png"
+                            alt="dashboard"
+                            class="tw-h-full tw-w-full tw-object-cover tw-opacity-90 max-lg:tw-object-contain"
+                        />
+                    </div>
+
+                    <div
+                        class="hero-img-bg-grad tw-absolute tw-left-[20%] tw-top-5 tw-h-[200px] tw-w-[200px]"
+                    ></div>
+                </div>
             </div>
-        </div>
-    </nav>
-    <hr class="thick-black-line" />
-   <div class="container">
-        <div class="fade-in-image">
-            <img src="MainBanner.jpg" alt="Fading Image" class="img-fluid">
-        </div>
-    </div>
-   <div class="text-container"></div>
-        <p class="centered-text">
-        Introducing CourseNotify, the most sought after app from UMD Students. Get instant notification when seats in your targetted course opens up. No more sleepless 
-        nights and checking testudo again and again. Signup now.
-        </p>  
-    </div>
-       
+            <div 
+                class="tw-relative tw-flex tw-w-full tw-max-w-[25px] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-8"
+            >
+
+            <!--------------------------CAROUSEL START --------------------------------------------------------------------------------------------------------------------------------->
+            <h2 class="reveal-up tw-text-3xl max-md:tw-text-xl color="#ffffff"; font-size="13px";>
+                Used by Students at 
+            </h2>
+
+            <div class="reveal-up carousel-container">
+                <div
+                    class="carousel lg:w-place-content-center tw-mt-6 tw-flex tw-w-full tw-gap-5 max-md:tw-gap-2"
+                >
+                    <!-- add the brands using your app  -->
+                    <div class="carousel-img tw-h-[30px] tw-w-[150px]">
+                        <img
+                            src="./imgs/public/carousel/TexasAM.jpg"
+                            alt="Texas A&M"
+                            class="tw-h-full tw-w-full tw-object-contain  tw-transition-colors hover:tw-grayscale-0"
+                            srcset=""
+                        />
+                    </div>
+                    <div class="carousel-img tw-h-[30px] tw-w-[150px]">
+                        <img
+                            src="./imgs/public/carousel/Rutgers.png"
+                            alt="Rutgers"
+                            class="tw-h-full tw-w-full tw-object-contain  tw-transition-colors hover:tw-grayscale-0"
+                            srcset=""
+                        />
+                    </div>
+                    <div class="carousel-img tw-h-[30px] tw-w-[150px]">
+                        <img
+                            src="./imgs/public/carousel/UFlorida.png"
+                            alt="U Florida"
+                            class="tw-h-full tw-w-full tw-object-contain  tw-transition-colors hover:tw-grayscale-0"
+                            srcset=""
+                        />
+                    </div>
+                    <div class="carousel-img tw-h-[30px] tw-w-[150px]">
+                        <img
+                            src="./imgs/public/carousel/OhioState.png"
+                            alt="Ohio State"
+                            class="tw-h-full tw-w-full tw-object-contain  tw-transition-colors hover:tw-grayscale-0"
+                            srcset=""
+                        />
+                    </div>
+                    <div class="carousel-img tw-h-[30px] tw-w-[150px]">
+                        <img
+                            src="./imgs/public/carousel/ASU.png"
+                            alt="Arizona State"
+                            class="tw-h-full tw-w-full tw-object-contain  tw-transition-colors hover:tw-grayscale-0"
+                            srcset=""
+                        />
+                    </div>
+                    <div class="carousel-img tw-h-[30px] tw-w-[150px]">
+                        <img
+                            src="./imgs/public/carousel/Minnesota.png"
+                            alt="Minnesota"
+                            class="tw-h-full tw-w-full tw-object-contain  tw-transition-colors hover:tw-grayscale-0"
+                            srcset=""
+                        />
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        
+        <!--------------------------FEATURES START --------------------------------------------------------------------------------------------------------------------------------->
+        
+
+        <section
+            class="tw-relative tw-flex tw-min-h-[80vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
+            id="features"
+        >
+            <div
+                class="tw-mt-8 tw-flex tw-flex-col tw-place-items-center tw-gap-5"
+            >
+                <div
+                    class="reveal-up tw-mt-5 tw-flex tw-flex-col tw-gap-3 tw-text-center"
+                >
+                    <h2
+                        class="tw-text-4xl tw-font-medium tw-text-gray-200 max-md:tw-text-2xl"
+                    >
+                        Features loved by everyone
+                    </h2>
+                </div>
+                <div
+                    class="tw-mt-6 tw-flex tw-max-w-[80%] tw-flex-wrap tw-place-content-center tw-gap-8 max-lg:tw-flex-col"
+                >
+                    <div
+                        class="reveal-up tw-flex tw-h-[200px] tw-w-[450px] tw-gap-8 tw-rounded-xl tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 max-md:tw-w-[320px]"
+                    >
+                        <div class="tw-text-4xl max-md:tw-text-2xl">
+                            <i class="bi bi-globe"></i>
+                        </div>
+
+                        <div class="tw-flex tw-flex-col tw-gap-4">
+                            <h3 class="tw-text-2xl max-md:tw-text-xl">
+                                Multi Platform
+                            </h3>
+                            <p class="tw-text-gray-300 max-md:tw-text-sm">
+                                Browser based app and Works on Windows, Linux, MacOS, 
+                                Mobile app works on iPhone, iPad and other Apple devices
+                                Android version is in beta and will be available soon. 
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="reveal-up tw-flex tw-h-[200px] tw-w-[450px] tw-gap-8 tw-rounded-xl tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 max-md:tw-w-[320px]"
+                    >
+                        <div class="tw-text-4xl max-md:tw-text-2xl">
+                            <i class="bi bi-bar-chart-fill"></i>
+                        </div>
+
+                        <div class="tw-flex tw-flex-col tw-gap-4">
+                            <h3 class="tw-text-2xl max-md:tw-text-xl">
+                                Notification
+                            </h3>
+                            <p class="tw-text-gray-300 max-md:tw-text-sm">
+                                Instant notification when a seat becomes available in a course by email or mobile alerts.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="reveal-up tw-flex tw-h-[200px] tw-w-[450px] tw-gap-8 tw-rounded-xl tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 max-md:tw-w-[320px]"
+                    >
+                        <div class="tw-text-4xl max-md:tw-text-2xl">
+                            <i class="bi bi-cloud-fill"></i>
+                        </div>
+
+                        <div class="tw-flex tw-flex-col tw-gap-4">
+                            <h3 class="tw-text-2xl max-md:tw-text-xl">
+                                Cloud 
+                            </h3>
+                            <p class="tw-text-gray-300 max-md:tw-text-sm">
+                                Cloud based App, always available and accessible anywhere in the world
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="reveal-up tw-flex tw-h-[200px] tw-w-[450px] tw-gap-8 tw-rounded-xl tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 max-md:tw-w-[320px]"
+                    >
+                        <div class="tw-text-4xl max-md:tw-text-2xl">
+                            <i class="bi bi-fingerprint"></i>
+                        </div>
+
+                        <div class="tw-flex tw-flex-col tw-gap-4">
+                            <h3 class="tw-text-2xl max-md:tw-text-xl">
+                                Multi Universities
+                            </h3>
+                            <p class="tw-text-gray-300 max-md:tw-text-sm">
+                                Available for all top Universities and Colleges and covers the most over-subscribed courses.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="reveal-up tw-flex tw-h-[200px] tw-w-[450px] tw-gap-8 tw-rounded-xl tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 max-md:tw-w-[320px]"
+                    >
+                        <div class="tw-text-4xl max-md:tw-text-2xl">
+                            <i class="bi bi-sliders"></i>
+                        </div>
+
+                        <div class="tw-flex tw-flex-col tw-gap-4">
+                            <h3 class="tw-text-2xl max-md:tw-text-xl">
+                                History
+                            </h3>
+                            <p class="tw-text-gray-300 max-md:tw-text-sm">
+                                Check how and when seats became available for a particular course.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="reveal-up tw-flex tw-h-[200px] tw-w-[450px] tw-gap-8 tw-rounded-xl tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 max-md:tw-w-[320px]"
+                    >
+                        <div class="tw-text-4xl max-md:tw-text-2xl">
+                            <i class="bi bi-gear-fill"></i>
+                        </div>
+
+                        <div class="tw-flex tw-flex-col tw-gap-4">
+                            <h3 class="tw-text-2xl max-md:tw-text-xl">
+                                Advanced configurations
+                            </h3>
+                            <p class="tw-text-sm tw-text-gray-300">
+                                Configure to set notification medium, alert intervals and various other features.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <P>&nbsp;</P><P>&nbsp;</P>
+                <a
+                    class="btn tw-bg-[#8de924] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                    href="#top"
+                >
+                BACK
+                </a>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+        </section>
+        
+        
+        <!--------------------------PRICING START --------------------------------------------------------------------------------------------------------------------------------->
+        <section
+            class="tw-mt-5 tw-flex tw-w-full tw-h-full tw-flex-col tw-place-items-center tw-p-[2%]"
+            id="pricing"
             
+        >
+            <h3
+                class="tw-text-3xl tw-font-medium tw-text-gray-300 max-md:tw-text-2xl"
+            >
+                PRICING
+            </h3>
+            <!-- features -->
+            <div
+                class="tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-8 max-lg:tw-flex-col"
+            >
+                <div
+                    class="reveal-up tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <h3 class="">
+                        <span class="tw-text-5xl tw-font-semibold">NOTIFICATIONS</span>
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-300">
+                        Get instant notifications as soon as a course opens up
+                    </p>
+                    <hr />
+                    <ul
+                        class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-center tw-text-lg tw-text-gray-200"
+                    >
+                        <li>Choose Courses</li>
+                        <li>Add to your list</li>
+                        <li>Seat opens</li>
+                        <li>Alert appears - Instantly</li>
+                    </ul>
+                    <a
+                        href="#signup1"
+                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get now
+                    </a>
+                </div>
+                <div
+                    class="reveal-up tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-2 tw-border-primary tw-bg-secondary tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <h3 class="">
+                        <span class="tw-text-5xl tw-font-semibold">FREE</span>
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-300">
+                        Absolutely Free - Can't get any better!!!
+                    </p>
+                    <hr />
+                    <ul
+                        class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-center tw-text-lg tw-text-gray-200"
+                    >
+                        <li>FREE to Use via web</li>
+                        <li>FREE to Use via mobile app</li>
+                        <li>FREE to Share</li>
+                        <li>FREE from Worries</li>
+                    </ul>
+                    <a
+                        href="#signup1"
+                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get now
+                    </a>
+                </div>
+                <div
+                    class="reveal-up tw-flex tw-w-[380px] tw-flex-col tw-place-items-center tw-gap-2 tw-rounded-lg tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-8 tw-shadow-xl max-lg:tw-w-[320px]"
+                >
+                    <h3 class="">
+                        <span class="tw-text-5xl tw-font-semibold">MULTI PLATFORM</span>
+                    </h3>
+                    <p class="tw-mt-3 tw-text-center tw-text-gray-300">
+                        Available on desktop and mobile
+                    </p>
+                    <hr />
+                    <ul
+                        class="tw-mt-4 tw-flex tw-flex-col tw-gap-2 tw-text-center tw-text-lg tw-text-gray-200"
+                    >
+                        <li>Chrome</li>
+                        <li>Safari</li>
+                        <li>iPhone</li>
+                        <li>iPad</li>
+                    </ul>
+                    <a
+                        href="#signup1"
+                        class="btn tw-mt-8 !tw-w-full tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.02]"
+                    >
+                        Get now
+                    </a>
+                </div>
+            </div>
+            <P>&nbsp;</P><P>&nbsp;</P>
+                <a
+                    class="btn tw-bg-[#8de924] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                    href="#top"
+                >
+                BACK
+                </a>
+            <div><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P></div>
+        </section>
+        
+        <!--------------------------UNIVERSITIES AND COLLEGES START --------------------------------------------------------------------------------------------------------------------------------->
+        <section
+            class="tw-mt-5 tw-flex tw-min-h-[10vh] tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-p-[2%] max-lg:tw-p-3"
+            id="colleges"
+        >
+            <h3
+                class="reveal-up tw-text-center tw-text-4xl tw-font-medium max-md:tw-text-2xl"
+            >
+                UNIVERSITIES & COLLEGES ✨
+            </h3>
+            <!-- articles -->
+            <div
+                class="reveal-up tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-10 max-lg:tw-flex-col"
+            >
+                <a
+                    href="https://www.universityofcalifornia.edu/"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                        class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md"
+                    >
+                        <img
+                            src="./imgs/public/univ-colleges/University-of-California-logo.png"
+                            alt="article image"
+                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                    </div>
+                    <h3
+                        class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl"
+                    >
+                        University of California 
+                    </h3>
+                    <p class="tw-text-gray-400">
+                        UC Berkeley, UC Los Angeles, UC San Diego, UC Santa Barbara, UC Irvine
+                    </p>
+                    <span>
+                        <span>Learn more</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </a>
+                <a
+                    href="https://www.utsystem.edu/institutions"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                        class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md"
+                    >
+                        <img
+                            src="./imgs/public/univ-colleges/UofTsystem_seal.png"
+                            alt="article image"
+                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                    </div>
+                    <h3
+                        class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl"
+                    >
+                        University of Texas 
+                    </h3>
+                    <p class="tw-text-gray-400">
+                        UT Austin, UT Arlington, UT Dallas, UT Houston, UT El Paso
+                    </p>
+                    <span>
+                        <span>Learn more</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </a>
+                <a
+                    href="https://www.suny.edu/"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                        class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md"
+                    >
+                        <img
+                            src="./imgs/public/univ-colleges/SUNY_Seal.png"
+                            alt="article image"
+                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                    </div>
+                    <h3
+                        class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl"
+                    >
+                        State University of New York 
+                    </h3>
+                    <p class="tw-text-gray-400">
+                        Buffalo, Stony Brook, Binghamton, Albany
+                    </p>
+                    <span>
+                        <span>Learn more</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </a>
+                <a
+                    href="https://www.rutgers.edu/"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                        class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md"
+                    >
+                        <img
+                            src="./imgs/public/univ-colleges/Rutgers.png"
+                            alt="article image"
+                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                    </div>
+                    <h3
+                        class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl"
+                    >
+                         Rutgers, State University of New Jersey
+                    </h3>
+                    <p class="tw-text-gray-400">
+                        New Brunswick, Newark, Camden
+                    </p>
+                    <span>
+                        <span>Learn more</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </a>
+                <a
+                    href="https://www.ufl.edu/"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                        class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md"
+                    >
+                        <img
+                            src="./imgs/public/univ-colleges/UnivFlorida.png"
+                            alt="article image"
+                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                    </div>
+                    <h3
+                        class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl"
+                    >
+                         University of Florida 
+                    </h3>
+                    <p class="tw-text-gray-400">
+                        Gainesville, Jacksonville,  Orlando
+                    </p>
+                    <span>
+                        <span>Learn more</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </a>
+                <a
+                    href="https://www.washington.edu/"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-4 tw-overflow-clip tw-rounded-lg tw-p-4 max-lg:tw-w-[300px]"
+                >
+                    <div
+                        class="tw-h-[250px] tw-w-full tw-overflow-hidden tw-rounded-md"
+                    >
+                        <img
+                            src="./imgs/public/univ-colleges/UnivWashington.png"
+                            alt="article image"
+                            class="tw-h-full tw-w-full tw-object-cover tw-transition-transform tw-duration-[0.3s] hover:tw-scale-[1.04]"
+                            srcset=""
+                        />
+                    </div>
+                    <h3
+                        class="tw-mt-2 tw-text-2xl tw-font-semibold max-md:tw-text-xl"
+                    >
+                         University of Washington
+                    </h3>
+                    <p class="tw-text-gray-400">
+                        Seattle, Bothell, Tacoma
+                    </p>
+                    <span>
+                        <span>Learn more</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+                </a>
+            </div>
+            <P>&nbsp;</P><P>&nbsp;</P>
+                <a
+                    class="btn tw-bg-[#8de924] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                    href="#top"
+                >
+                BACK
+                </a>
+            <div><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+        </section>
+        <!--------------------------SIGNUP FORM START --------------------------------------------------------------------------------------------------------------------------------->
+        <!-- ======================================== -->
+        <!-- Sign up form -->
 
-       
+        <section class="signup tw-place-items-center" id="signup1">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h1 style="font-size: 24px; color: #ffffff;">Create an Account</h1><P>&nbsp;</P>
+    <form method="POST" class="space-y-6 bg-white p-10 rounded-3xl shadow-2xl max-w-md w-full">
+        <!-- Form Header -->
+        <h1 class="text-3xl font-bold text-gray-900 text-center">Sign up</h1>
+                            &nbsp
+
+        <!-- Name -->
+        <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" class="mt-2 w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none">
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" class="mt-2 w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none">
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input type="password" name="pass" id="pass" placeholder="Enter your password" class="mt-2 w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none">
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+            <label for="re_pass" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+            <input type="password" name="re_pass" id="re_pass" placeholder="Confirm your password" class="mt-2 w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none">
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="flex items-center">
+            <input type="checkbox" name="agree-term" id="agree-term" class="w-4 h-4 text-purple-500 focus:ring-2 focus:ring-purple-500 rounded">
+            <label for="agree-term" class="ml-2 text-sm text-gray-600">I agree to the <a href="#" class="text-purple-500 underline">Terms of Service</a>.</label>
+        </div>
+<p>&nbsp</p>
+        <!-- Submit Button -->
+        <div class="form-group form-button">
+            <button type="submit" name="signup" id="signup" class="form-submit">Sign Up</button>
+        </div>
+
+        <!-- Footer Link -->
+        <p class="text-sm text-center text-gray-600">Already have an account? <a href="#login" class="text-purple-500 font-semibold underline">Log In</a></p>
+    </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="./imgs/private/CN-Icon8.png" style="border-radius: 8%;" alt="sing up image"></figure>
+                    </div>
+                </div>
+            </div>
+                <CENTER>
+                <a
+                    class="btn tw-bg-[#8de924] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                    href="#top"
+                >
+                BACK
+                </a>
+            <div><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P></div>
+            </CENTER>
+        </section>
+        
+<!--------------------------LOGIN FORM START --------------------------------------------------------------------------------------------------------------------------------->
+<!-- ======================================== -->
+<!-- Sign up form -->
+<section class="signup tw-place-items-center" id="login1">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-image">
+                <figure><img src="./imgs/private/CN-Icon8.png" style="border-radius: 8%;" alt="sing up image"></figure>
+            </div>
+            <div class="signup-form">
+                <h1 style="font-size: 24px; color: #ffffff;">Log In</h1><P>&nbsp;</P>
+    <form method="POST" class="space-y-6 bg-white p-10 rounded-3xl shadow-2xl max-w-md w-full">
+        <!-- Form Header -->
+
+        <!-- Email -->
+        <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" class="mt-2 w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none">
+        </div>
+
+        <!-- Password -->
+        <div>
+            <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+            <input type="password" name="pass" id="pass" placeholder="Enter your password" class="mt-2 w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:outline-none">
+        </div>
+
+        <!-- Submit Button -->
+                    <div class="form-group form-button">
+                        <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                    </div>
+
+        <!-- Footer Link -->
+        <p class="text-sm text-center text-gray-600">Don't have an account? <a href="#signup" class="text-purple-500 font-semibold underline">Sign Up</a></p>
+    </form>
+                <!-- <form method="POST" class="register-form" id="register-form"> -->
+                <!--     <div class="form-group"> -->
+                <!--         <label for="email"><i class="zmdi zmdi-email"></i></label> -->
+                <!--         <input type="email" name="email" id="email" placeholder="Your Email"/> -->
+                <!--     </div> -->
+                <!--     <div class="form-group"> -->
+                <!--         <label for="pass"><i class="zmdi zmdi-lock"></i></label> -->
+                <!--         <input type="password" name="pass" id="pass" placeholder="Password"/> -->
+                <!--     </div> -->
+                <!-- </form> -->
+            </div>
+            
+        </div>
     </div>
+        <CENTER>
+        <a
+            class="btn tw-bg-[#8de924] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+            href="#top"
+        >
+        BACK
+        </a>
+    <div><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+        <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+        <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P></div>
+    </CENTER>
+</section>
 
-    <script>
-        window.onload = function() {
-            const image = document.getElementById('main-image');
-            image.classList.add('fade-in');
-        }
-    </script>
-</body>
+
+
+
+
+
+        <!--------------------------FAQ START --------------------------------------------------------------------------------------------------------------------------------->
+        
+        <section
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%]"
+            id="faqs"
+        >
+            <h3
+                class="tw-text-4xl tw-font-medium tw-text-gray-300 max-md:tw-text-2xl"
+            >
+                FAQ
+            </h3>
+            <div
+                class="tw-mt-5 tw-flex tw-min-h-[300px] tw-w-full tw-max-w-[850px] tw-flex-col tw-gap-4"
+            >
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Which Universities and Colleges are supported?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        All major Universities and Colleges are supported and we are adding news ones every week
+                    </div>
+                </div>
+
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Can I request to add new Universities and Colleges?</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        Absolutely. We add new ones based on demand from existing students.
+                    </div>
+                </div>
+
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>When is the Andriod version going to be available</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        Android version is currently under development and will be available soon.
+                    </div>
+                </div>
+
+                <div
+                    class="faq tw-w-full tw-rounded-md tw-border-[1px] tw-border-solid tw-border-[#1F2123] tw-bg-[#080808]"
+                >
+                    <div
+                        class="faq-accordion tw-flex tw-w-full tw-select-none tw-text-xl max-md:tw-text-lg"
+                    >
+                        <span>Can I join the beta program for Android</span>
+                        <i class="bi bi-plus tw-ml-auto tw-font-semibold"></i>
+                    </div>
+                    <div class="content">
+                        We already have a sufficient number of beta testers. We will advertise for new testers, when we need it.
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="tw-mt-20 tw-flex tw-flex-col tw-place-items-center tw-gap-4"
+            >
+                <div class="tw-text-3xl max-md:tw-text-2xl">
+                    Still have questions?
+                </div>
+                <a
+                    href="mailto:support@coursenotify.com"
+                    class="btn !tw-rounded-full !tw-border-[1px] !tw-border-solid !tw-border-gray-300 !tw-bg-transparent tw-transition-colors tw-duration-[0.3s]"
+                >
+                    Contact
+                </a>
+            </div>
+        </section>
+
+        <section
+            class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2"
+        >
+            <div
+                class="tw-flex tw-w-full tw-max-w-[80%] tw-place-content-center tw-place-items-center tw-justify-between tw-gap-3 tw-rounded-lg tw-border-[1px] tw-border-outlineColor tw-bg-secondary tw-p-6 max-md:tw-max-w-full max-md:tw-flex-col"
+            >
+                <div class="tw-flex tw-flex-col tw-gap-1">
+                    <h2 class="tw-text-3xl tw-text-gray-300 max-md:tw-text-xl">
+                        Join our newsletter
+                    </h2>
+                    <div class="tw-text-gray-300">for latest features and release plans</div>
+                </div>
+
+                <div
+                    class="tw-flex tw-h-[60px] tw-place-items-center tw-gap-2 tw-overflow-hidden tw-p-2"
+                >
+                    <input
+                        type="email"
+                        class="input tw-h-full tw-w-full !tw-border-gray-600 tw-p-2 tw-outline-none"
+                        placeholder="email"
+                    />
+                    <a
+                        class="btn !tw-rounded-full !tw-border-[1px] !tw-border-solid !tw-border-gray-300 !tw-bg-transparent tw-transition-colors tw-duration-[0.3s]"
+                        href=""
+                    >
+                    SignUp!
+                    </a>
+                </div>
+            </div>
+            <div><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P></div>
+            <CENTER>
+                <a
+                    class="btn tw-bg-[#8de924] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
+                    href="#top"
+                >
+                BACK
+                </a>
+            <div><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P>
+                <P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P><P>&nbsp;</P></div>
+            </CENTER>
+        </section>
+
+        
+    </body>
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
+        integrity="sha512-B1lby8cGcAUU3GR+Fd809/ZxgHbfwJMp0jLTVfHiArTuUt++VqSlJpaJvhNtRf3NERaxDNmmxkdx2o+aHd4bvw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"
+        integrity="sha512-AY2+JxnBETJ0wcXnLPCcZJIJx0eimyhz3OJ55k2Jx4RtYC+XdIi2VtJQ+tP3BaTst4otlGG1TtPJ9fKrAUnRdQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./js/index.js"></script>
 </html>
-
