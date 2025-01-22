@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const displayError = (event) => {
     event.preventDefault(); // Prevent the default form submission
     alert(
-      "Not from a valid educational institution, accounts are limited to verified students.",
+      "Not a valid educational email, accounts are limited to verified students.",
     );
   };
 
